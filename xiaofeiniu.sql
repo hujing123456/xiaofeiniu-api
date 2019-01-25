@@ -49,12 +49,14 @@ CREATE TABLE xfn_reservation(
     contactName VARCHAR(32),             #联系人姓名
     phone VARCHAR(16),                   #联系人电话
     contactTime BIGINT,                  #联系时间,客户打电话
-    dinnerTime BIGINT                    #用餐时间
+    dinnerTime BIGINT ,                   #用餐时间
+    tableId INT,
+    FOREIGN KEY(tableId) REFERENCES xfn_table(tid)
 );
 INSERT INTO xfn_reservation VALUES
-(NULL,'dangdang','13852126526',1548392562685,1548392653655),
-(NULL,'linwei','13852122654',1548392644559,1548392863655),
-(NULL,'lindi','13852123568',1548392656559,1548392873655),
+(NULL,'dangdang','13852126526',1548392562685,1548392653655,1),
+(NULL,'linwei','13852122654',1548392644559,1548392863655,2),
+(NULL,'lindi','13852123568',1548392656559,1548392873655,3),
 (NULL,'linpo','13852128518',1548392674559,1548392893655);
 
 
