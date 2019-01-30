@@ -6,6 +6,8 @@ const bodyParser=require('body-parser')
 const categoryRouter=require("./routes/admin/category")
 const adminRouter=require("./routes/admin/admin")
 const dishRouter=require("./routes/admin/dish")
+const settingRouter=require("./routes/admin/settings")
+const tableRouter=require("./routes/admin/table")
 //创建服务器
 var app=express();
 app.listen(PORT,()=>{
@@ -19,3 +21,5 @@ app.use(bodyParser.json());
 app.use("/admin/category",categoryRouter);
 app.use('/admin',adminRouter);
 app.use('/admin/dish',dishRouter);
+app.use('/admin/settings',settingRouter);
+app.use('/admin/table',tableRouter);
