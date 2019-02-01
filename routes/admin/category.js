@@ -38,7 +38,7 @@ router.post('/',(req,res)=>{
     var data=req.body;
     pool.query("INSERT INTO xfn_category VALUES (NULL,?)",data.cname,(err,result)=>{
         if(err) throw err;
-        res.send({code:200,msg:"1 category added"})
+        res.send({code:200,msg:"1 category added",cid:result.insertId})
     })
 })
 // API:PUT /admin/category

@@ -8,6 +8,8 @@
 </head>
 <body>
     <button id="bt1">获取所有桌台信息</button>
+    <button id="bt2">添加桌台信息</button>
+    <button id="bt3">删除桌台信息</button>
     <script src="./axios.min.js"></script>
     <script>
         bt1.onclick=function(){
@@ -17,6 +19,22 @@
               console.log(err);
             })
         }
+        bt2.onclick=function(){
+            var data={tname:'一帆风顺',type:'2-4人桌',status:2}
+            axios.post("http://127.0.0.1:8090/admin/table",data).then((res)=>{
+                console.log(res.data);
+            }).catch((err)=>{
+              console.log(err);
+            })
+        }
+        bt3.onclick=function(){
+            axios.delete("http://127.0.0.1:8090/admin/table/7").then((res)=>{
+                console.log(res.data);
+            }).catch((err)=>{
+              console.log(err);
+            })
+        }
+        
         
     </script>
 </body>
